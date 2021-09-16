@@ -1,7 +1,7 @@
 ## Leave 
 """
 ◇ Command  -
-• `{i}encodequeue <reply to video>`
+• {i}crf (crf value {0-51})
    **Encode video with your desired crf value 
     Now support with queue**
    
@@ -23,7 +23,7 @@ from . import *
 compressor_queue = []
 
 
-@ultroid_cmd(pattern="encodequeue ?(.*)")
+@ultroid_cmd(pattern="crf ?(.*)")
 async def _(e):
     cr = e.pattern_match.group(1)
     crf = 30
@@ -60,7 +60,7 @@ async def _(e):
         file_name = (file.name).split("/")[-1]
         out = file_name.replace(file_name.split(".")[-1], "compressed.mkv")
         await xxx.edit(
-            f"`Downloaded {file.name} of {humanbytes(o_size)} in {diff}.\nNow Compressing...`"
+            f"`Downloaded {file.name} of {humanbytes(o_size)} in {diff}.\n📀Now Encoding📀"
         )
         x, y = await bash(
             f'mediainfo --fullscan """{file.name}""" | grep "Frame count"'
@@ -104,17 +104,34 @@ async def _(e):
                             humanbytes(size) + " of ~" + humanbytes((size / per) * 100)
                         )
                         eta = "~" + time_formatter(some_eta)
-                        try:
-                            await xxx.edit(
-                                text
-                                + progress_str
-                                + "`"
-                                + e_size
-                                + "`"
-                                + "\n\n`"
-                                + eta
-                                + "`"
-                            )
+async def stats(e):
+    try:
+        wah = e.pattern_match.group(1).decode("UTF-8")
+        wh = decode(wah)
+        out, dl, thum, dtime = wh.split(";")
+        ot = hbs(int(Path(out).stat().st_size))
+        ov = hbs(int(Path(dl).stat().st_size))
+        ans = f"Downloaded:\n{ov}\n\nCompressing:\n{ot}"
+        await e.answer(ans, cache_time=0, alert=True)
+    except BaseException:
+        await e.answer("Compressing stopped (resend media)", cache_time=0, alert=True)
+
+
+async def encc(e):
+    try:
+        es = dt.now()
+        COUNT.append(e.chat_id)
+        wah = e.pattern_match.group(1).decode("UTF-8")
+        wh = decode(wah)
+        out, dl, thum, dtime = wh.split(";")
+        nn = await e.edit(
+            "`Compressing..`",
+            buttons=[
+                [Button.inline("STATS", data=f"stats{wah}")],
+                [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+            ],
+        )
+                        
                         except MessageNotModifiedError:
                             pass
             os.remove(file.name)
