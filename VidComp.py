@@ -107,8 +107,6 @@ async def _(e):
                           try:
                             wah = progress
                             await e.answer(ans, cache_time=0, alert=True)
-                                except BaseException:
-                                await e.answer("Compressing stopped (resend media)", cache_time=0, alert=True)
                                 
                            
                         async def encc(e):
