@@ -118,7 +118,7 @@ async def encc(e):
         nn = await xxx.edit(
             "**Compressing**",
             buttons=[
-                [Button.inline("STATS", data=f"stats{wah}")],
+                [Button.inline("STATS", data=wah)],
                 [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
             ],
         )
