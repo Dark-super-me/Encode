@@ -114,14 +114,12 @@ async def stats(e):
 
 async def encc(e):
     try:
-        es = dt.now()
-        COUNT.append(e.chat_id)
         wah = progress
-        nn = await e.edit(
+        nn = await xxx.edit(
             "**Compressing**",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
-                [Button.inline("CHANNEL", url="t.me/Animes_Encoded")],
+                [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
             ],
         )
                         
