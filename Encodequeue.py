@@ -1,7 +1,7 @@
 ## Leave 
 """
 ◇ Command  -
-• `{i}encodequeue <reply to video>`
+• `{i}comp <reply to video>`
    **Encode video with your desired crf value 
     Now support with queue**
    
@@ -23,7 +23,7 @@ from . import *
 compressor_queue = []
 
 
-@ultroid_cmd(pattern="encodequeue ?(.*)")
+@ultroid_cmd(pattern="comp ?(.*)")
 async def _(e):
     cr = e.pattern_match.group(1)
     crf = 30
@@ -99,24 +99,31 @@ async def _(e):
                             "".join("" for i in range(20 - math.floor(per / 5))),
                             round(per, 2),
                         )
-
                         e_size = (
                             humanbytes(size) + " of ~" + humanbytes((size / per) * 100)
                         )
-                        eta = "~" + time_formatter(some_eta)
-                        try:
-                            await xxx.edit(
-                                text
-                                + progress_str
-                                + "`"
-                                + e_size
-                                + "`"
-                                + "\n\n`"
-                                + eta
-                                + "`"
-                            )
-                        except MessageNotModifiedError:
-                            pass
+
+                        async def stats(e):
+    try:
+        wah = progress
+        await e.answer(ans, cache_time=0, alert=True)
+    except BaseException:
+        await e.answer("Compressing stopped (resend media)", cache_time=0, alert=True)
+
+
+async def encc(e):
+    try:
+        wah = progress
+        nn = await xxx.edit(
+            "**Compressing**",
+            buttons=[
+                [Button.inline("STATS", data=e_size)],
+                [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
+            ],
+        )
+
+                        
+                        
             os.remove(file.name)
             c_size = os.path.getsize(out)
             f_time = time.time()
