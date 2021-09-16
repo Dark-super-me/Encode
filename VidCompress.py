@@ -1,7 +1,7 @@
 ## Leave 
 """
 ◇ Command  -
-• `{i}comp <reply to video>`
+• `{i}crf <reply to video>`
    **Encode video with your desired crf value 
     Now support with queue**
    
@@ -23,7 +23,7 @@ from . import *
 compressor_queue = []
 
 
-@ultroid_cmd(pattern="comp ?(.*)")
+@ultroid_cmd(pattern="crf ?(.*)")
 async def _(e):
     cr = e.pattern_match.group(1)
     crf = 30
