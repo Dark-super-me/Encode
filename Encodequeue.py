@@ -104,26 +104,33 @@ async def _(e):
                         )
 
                         async def stats(e):
-    try:
-        wah = progress
-        await e.answer(ans, cache_time=0, alert=True)
-    except BaseException:
-        await e.answer("Compressing stopped (resend media)", cache_time=0, alert=True)
-
-
-async def encc(e):
-    try:
-        wah = progress
-        nn = await xxx.edit(
-            "**Compressing**",
-            buttons=[
-                [Button.inline("STATS", data=e_size)],
-                [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
-            ],
-        )
-
-                        
-                        
+                          try:
+                            wah = progress
+                            await e.answer(ans, cache_time=0, alert=True)
+                                except BaseException:
+                                await e.answer("Compressing stopped (resend media)", cache_time=0, alert=True)
+                                
+                           
+                        async def encc(e):
+                          try:
+                            wah = progress
+                            nn = await xxx.edit(
+                              "**Compressing**",
+                              buttons=[
+                                [Button.inline("STATS", data=e_size)],
+                                [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
+                                ],
+                              )
+                                
+                             
+                
+            
+            
+                              
+                                
+                
+           
+          
             os.remove(file.name)
             c_size = os.path.getsize(out)
             f_time = time.time()
