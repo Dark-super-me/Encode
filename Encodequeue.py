@@ -106,12 +106,7 @@ async def _(e):
                         eta = "~" + time_formatter(some_eta)
 async def stats(e):
     try:
-        wah = e.pattern_match.group(1).decode("UTF-8")
-        wh = decode(wah)
-        out, dl, thum, dtime = wh.split(";")
-        ot = hbs(int(Path(out).stat().st_size))
-        ov = hbs(int(Path(dl).stat().st_size))
-        ans = f"Downloaded:\n{ov}\n\nCompressing:\n{ot}"
+        wah = progress
         await e.answer(ans, cache_time=0, alert=True)
     except BaseException:
         await e.answer("Compressing stopped (resend media)", cache_time=0, alert=True)
@@ -121,14 +116,12 @@ async def encc(e):
     try:
         es = dt.now()
         COUNT.append(e.chat_id)
-        wah = e.pattern_match.group(1).decode("UTF-8")
-        wh = decode(wah)
-        out, dl, thum, dtime = wh.split(";")
+        wah = progress
         nn = await e.edit(
-            "`Compressing..`",
+            "**Compressing**",
             buttons=[
                 [Button.inline("STATS", data=f"stats{wah}")],
-                [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+                [Button.inline("CHANNEL", url="t.me/Animes_Encoded")],
             ],
         )
                         
