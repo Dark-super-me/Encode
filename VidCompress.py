@@ -107,9 +107,7 @@ async def _(e):
                           try:
                             wah = progress
                             await e.answer(ans, cache_time=0, alert=True)
-                                
-                           
-                        async def encc(e):
+async def encc(e):
                           try:
                             wah = progress
                             nn = await xxx.edit(
@@ -184,3 +182,7 @@ async def _(e):
             compressor_queue.remove(progress)
     else:
         await eor(e, "`Reply To Video File Only`", time=5)
+
+                                
+                           
+                        
