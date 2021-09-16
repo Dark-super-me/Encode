@@ -123,8 +123,7 @@ async def encc(e):
             ],
         )
                         
-                        except MessageNotModifiedError:
-                            pass
+     
             os.remove(file.name)
             c_size = os.path.getsize(out)
             f_time = time.time()
