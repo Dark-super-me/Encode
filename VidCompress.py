@@ -108,15 +108,25 @@ async def _(e):
                             wah = progress
                             await e.answer(ans, cache_time=0, alert=True)
 async def encc(e):
-                          try:
-                            wah = progress
-                            nn = await xxx.edit(
-                              "**Compressing**",
-                              buttons=[
-                                [Button.inline("STATS", data=e_size)],
-                                [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
-                                ],
-                              )
+  try:
+    wah = progress
+    nn = await xxx.edit(
+      "**Compressing**",
+      buttons=[
+        [Button.inline("STATS", data=e_size)],
+        [Button.inline("CHANNEL", url="https://t.me/Animes_Encoded")],
+        ],
+      )
+                                
+                             
+                                
+                                
+                              
+                              
+   
+                            
+                            
+                          
                                 
                              
                 
