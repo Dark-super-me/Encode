@@ -34,19 +34,39 @@ async def beck(event):
  await event.edit(
   f"Hi ! Boss .... Click the below button to get started...",
   buttons=[
-   Button.inline("HELP", data="ihelp")]
+   Button.inline("HELP", data="ihelp")],
   )
+  
  
 # Let's make {i}start the ultroid plugins!
 @ultroid_cmd(pattern="start ?(.*)")
-async def start(event):
- if event.fwd_from:
-  return
- await event.edit(
-  f"Hi ! Boss .... Click the below button to get started...",
-  buttons=[
-   Button.inline("HELP", data="ihelp")],
-  )
+async def _(e):
+ cr = e.pattern_match.group(1)
+ if cr:
+  xxx = await eor(e, "Hi! Please wait")
+  await.sleep(2)
+  await xxx.edit(
+   f"Hi ! Boss .... Click the below button to get started...",
+   buttons=[
+    Button.inline("HELP", data="ihelp")],
+   )
+  
+  
+   
+   
+  
+  
+  
+   
+   
+  
+    
+    
+    
+ 
+ 
+
+ 
   
      
    
