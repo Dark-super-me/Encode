@@ -1,14 +1,4 @@
- 
-#Lol
-"""
-Usage - 
- Reply to a file/video with {i}start
- 
- To know more click help button ...
- If your original file is 1080p u can encode it in ur desired resolution!
- Dont use 480p files to encode !
- Join @Animes_Encoded for animes and support @TeamUltroid
-"""
+
 
 import asyncio
 import os
