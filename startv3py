@@ -1,7 +1,7 @@
 #Lol
 """
 Usage - 
- Reply to a file/video with {i}start
+ Reply to a file/video with {i}shame
  
  To know more click help button ...
  If your original file is 1080p u can encode it in ur desired resolution!
@@ -39,12 +39,12 @@ async def beck(event):
   
  
 # Let's make {i}start the ultroid plugins!
-@ultroid_cmd(pattern="start ?(.*)")
+@ultroid_cmd(pattern="shame ?(.*)")
 async def _(e):
  cr = e.pattern_match.group(1)
  if cr:
   xxx = await eor(e, "Hi! Please wait")
-  await.sleep(2)
+  time.sleep(2)
   await xxx.edit(
    f"Hi ! Boss .... Click the below button to get started...",
    buttons=[
