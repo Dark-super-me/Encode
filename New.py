@@ -43,12 +43,17 @@ async def _(event):
     if event.fwd_from:
         return
     await event.edit(
+     f"Hi ! Boss .... Click the below button to get started...",
+     buttons=[
+      Button.inline("HELP", data="ihelp")],
+     )
+  
+     
+  
+    
      
 
-  f"Hi ! Boss .... Click the below button to get started...",
-  buttons=[
-    Button.inline("HELP", data="ihelp")],
-  )
+  
   
     
    
