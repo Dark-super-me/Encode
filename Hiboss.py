@@ -10,7 +10,7 @@ async def hiboss(ult):
  await ult.edit("Hi")
  await ult.edit("Boss")
  await asyncio.sleep(1)
- b = 🤥
+ b = "🤥"
  b = giveVar[4:5]
  
  await ult.edit(
