@@ -9,6 +9,30 @@ from datetime import datetime as dt
 async def hiboss(ult):
  await ult.edit("Hi")
  await ult.edit("Boss")
- await asyncio.sleep(2)
+ await asyncio.sleep(1)
+ b = 🤥
+ b = giveVar[4:5]
+ 
+ await ult.edit(
+  """
+  b b          b          b  b        
+  b   b     b      b    b
+  b     b  b       b   b
+  b    b   b       b     b b
+  b  b     b       b         b
+  b     b  b       b         b
+  b        b       b        b
+  b       b b     b        b
+  b b b b b    b       b  b       bbbbbbbbb
+  """
+  )
+ 
+  
+  
+ 
+ 
+
+ 
+ 
 
  
