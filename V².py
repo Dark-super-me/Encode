@@ -42,17 +42,22 @@ async def beck(event):
 @ultroid_cmd(pattern="comp ?(.*)")
 async def encod(e):
  cr = e.pattern_match.group(1)
- r = await e.get_reply_message()
-    if not (r and r.media):
-        return await eor(e, "**Reply to video file**", time=5)
-    xx = await eor(e, "**This is an ultroid\nvideo compressor plugin**")
-    await asyncio.sleep(3)
-    await xx.edit(
-     f"Hi ! Boss .... Click the below button to get started...",
-     buttons=[
-      Button.inline("HELP", data="ihelp")],
-     )
+ xx = await eor(e, "**This is an ultroid\nvideo compressor plugin**")
+ await asyncio.sleep(3)
+ await xx.edit(
+  f"Hi ! Boss .... Click the below button to get started...",
+  buttons=[
+   Button.inline("HELP", data="ihelp")],
+  )
+     
+    
+     
+      
+     
   
+    
+ 
+    
   
       
    
