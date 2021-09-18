@@ -24,32 +24,66 @@ from . import *
   
 async def ihelp(event):
   await event.edit(
-    "**To use encode videos, try {i}480p, {i}720p and {i}1080p for encoding files",
-    buttons=[
-      Button.inline("Back", data="beck")],
-      )
+       "**To use encode videos, try {i}480p, {i}720p and {i}1080p for encoding files",
+   buttons=[
+    Button.inline("Back", data="beck")],
+   )
+
+async def beck(event):
+ ok = await event.client(GetFullUserRequest(event.sender_id))
+ await event.edit(
+  f"Hi ! Boss .... Click the below button to get started...",
+  buttons=[
+   Button.inline("HELP", data="ihelp")]
+  )
+ 
+# Let's make {i}start the ultroid plugins!
+@ultroid_cmd(pattern="start ?(.*)")
+async def _(e):
+ await event.edit(
+  f"Hi ! Boss .... Click the below button to get started...",
+  buttons=[
+   Button.inline("HELP", data="ihelp")],
+  )
+  
+   
+       
+       
+    
+  
+    
+
+
+   
+    
+   
+      
+   
+
+    
+    
+      
       
 
     
-async def beck(event):
-  ok = await event.client(GetFullUserRequest(event.sender_id))
-  await event.edit(
-    f"Hi ! Boss .... Click the below button to get started...",
-    buttons=[
-            [Button.inline("HELP", data="ihelp")],
-            )
-            
-# Atleast dont kang ffmpeg code 😂
 
 
-@ultroid_cmd(pattern="start ?(.*)")
-async def _(e):
-  await event.edit(
-    f"Hi ! Boss .... Click the below button to get started...",
-    buttons=[
-       [Button.inline("HELP", data="ihelp")],
-       )
+
+
             
            
     
     
+
+   
+            
+   
+   
+   
+            
+  
+    
+    
+  
+  
+            
