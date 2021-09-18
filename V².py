@@ -39,16 +39,21 @@ async def beck(event):
   )
  
 # Let's make {i}start the ultroid plugins!
-@ultroid_cmd(pattern="comp ?(.*)")
-async def encod(e):
- cr = e.pattern_match.group(1)
- xx = await eor(e, "**This is an ultroid\nvideo compressor plugin**")
+@ultroid_cmd(pattern="compbot")
+async def okboss(ult):
+ await ult.edit("**This is an ultroid\nvideo compressor plugin**")
  await asyncio.sleep(3)
- await xx.edit(
+ await ult.edit(
   f"Hi ! Boss .... Click the below button to get started...",
   buttons=[
    Button.inline("HELP", data="ihelp")],
   )
+  
+   
+  
+ 
+ 
+ 
      
     
      
