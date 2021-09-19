@@ -15,8 +15,9 @@ from . import *
 
  
  lst=[
-   Button.inline("Help", data="ihelp")]
+  Button.inline("Help", data="ihelp")]
   
+   
 async def ihelp(event):
   await event.edit(
        "**To use encode videos, try {i}480p, {i}720p and {i}1080p for encoding files",
