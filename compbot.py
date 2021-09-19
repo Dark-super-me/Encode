@@ -12,6 +12,10 @@ from telethon.errors.rpcerrorlist import MessageNotModifiedError
 from telethon.tl.types import DocumentAttributeVideo
 
 from . import *
+
+ 
+ lst=[
+   Button.inline("Help", data="ihelp")]
   
 async def ihelp(event):
   await event.edit(
@@ -33,11 +37,9 @@ async def beck(event):
 async def okboss(ult):
  await ult.edit("**This is an ultroid\nvideo compressor plugin**")
  await asyncio.sleep(3)
- await ult.edit(
-  f"Hi ! Boss .... Click the below button to get started...",
-  buttons=[
-   Button.inline("HELP", data="ihelp")],
-  )
+ await ult.edit(f"Hi ! Boss .... Click the below button to get started...", buttons=lst)
+  
+  
   
    
   
