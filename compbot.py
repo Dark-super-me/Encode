@@ -36,7 +36,7 @@ async def beck(event):
 @ultroid_cmd(pattern="compbot")
 async def okboss(ult):
  await ult.edit("**This is an ultroid\nvideo compressor plugin**")
- await asyncio.sleep(3)
+ await asyncio.sleep(2)
  await ult.edit(f"Hi ! Boss .... Click the below button to get started...", buttons=lst)
   
   
